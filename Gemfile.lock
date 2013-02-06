@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/james/src/steffi
+GIT
+  remote: git://github.com/jamesdabbs/steffi.git
+  revision: 0c0094e48ff1c9667ab92bbbe41e31a62465e670
   specs:
     steffi (0.0.0)
       ffi

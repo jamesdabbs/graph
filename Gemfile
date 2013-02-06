@@ -5,4 +5,4 @@ gem 'sinatra'
 gem 'haml'
 gem 'coffee-script'
 
-gem 'steffi', path: '/Users/james/src/steffi/'
+gem 'steffi', git: 'git://github.com/jamesdabbs/steffi.git'
