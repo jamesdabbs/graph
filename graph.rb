@@ -3,6 +3,18 @@ require 'coffee-script'
 
 require 'steffi'
 
+def safe_eval cmd=nil
+  cmd ||= 'famous meredith'
+  method, *args = cmd.split ' '
+  method = method.strip.to_sym
+  if Steffi::Graph.methods(false).include?(method) && method != :dump
+    args.map! { |a| Integer(a) rescue a }
+    Steffi::Graph.send method, *args
+  else
+    raise "Unrecognized command: #{method}"
+  end
+end
+
 get '/' do
   haml :index
 end
@@ -10,13 +22,12 @@ end
 get '/data.json' do
   Dir.chdir('data') do
     begin
-      cmd = params[:graph].empty? ? 'famous :meredith' : params[:graph]
-      Steffi::Graph.instance_eval(cmd).d3.to_json
+      safe_eval(params[:graph]).d3
     rescue => e
       { error:   true,
         type:    e.class,
-        message: e.message }.to_json
-    end
+        message: e.message }
+    end.to_json
   end
 end
 
