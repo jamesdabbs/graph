@@ -72,6 +72,7 @@
             %li
               %a{ href: "?graph=famous+%3Azachary", title: "Social network of friendships between 34 members of a karate club at a US university in the 1970s. See W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977)." } 
                 Zachary
+
             %li.nav-header Generators
             %li
               %a{ href: "?graph=full+6" } Full
@@ -81,9 +82,13 @@
               %a{ href: "?graph=star+15" } Star
             %li
               %a{ href: "?graph=tree+150%2C+6" } Tree
+
             %li.nav-header Games
             %li
               %a{ href: "?graph=erdos_renyi+150%2C+150" } Erdős-Renyi
+            %li
+              %a{ href: "?graph=citations+200%2C+3" } Citations
+
         #content.span10
           #alert.alert.alert-block.alert-error
             %button{ 'type' => 'button', 'class' => 'close', 'data-dismiss' => 'alert' }
