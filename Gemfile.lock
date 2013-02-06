@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jamesdabbs/steffi.git
-  revision: 0c0094e48ff1c9667ab92bbbe41e31a62465e670
+  revision: d0eaaacb91d9f346c1abd55abc36b4b4799b8855
   specs:
     steffi (0.0.0)
       ffi
@@ -17,7 +17,7 @@ GEM
     ffi (1.3.1)
     haml (3.1.7)
     multi_json (1.5.0)
-    rack (1.5.0)
+    rack (1.5.1)
     rack-protection (1.3.2)
       rack
     sinatra (1.3.4)
