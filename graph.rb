@@ -3,8 +3,8 @@ require 'coffee-script'
 
 require 'steffi'
 
-def safe_eval cmd=nil
-  cmd ||= 'famous meredith'
+def safe_eval cmd=''
+  cmd = cmd.empty? ? 'famous meredith' : cmd
   method, *args = cmd.split ' '
   method = method.strip.to_sym
   if Steffi::Graph.methods(false).include?(method) && method != :dump
