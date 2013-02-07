@@ -6,4 +6,8 @@ gem 'haml'
 gem 'coffee-script'
 gem 'foreman'
 
-gem 'steffi'
+gem 'steffi', git: 'git://github.com/jamesdabbs/steffi.git'
+
+group :development do
+  gem 'pry'
+end

@@ -22,7 +22,7 @@ end
 get '/data.json' do
   Dir.chdir('data') do
     begin
-      safe_eval(params[:graph]).d3
+      safe_eval(params[:graph]).to_hash
     rescue => e
       { error:   true,
         type:    e.class,
