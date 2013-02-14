@@ -20,7 +20,7 @@ get '/' do
 end
 
 get '/data.json' do
-  Dir.chdir('data') do
+  Dir.chdir(File.expand_path '../data/', __FILE__) do
     begin
       safe_eval(params[:graph]).to_hash
     rescue => e
