@@ -89,6 +89,12 @@
             %li
               %a{ href: "?graph=citations+200+3" } Citations
 
+            %li.nav-header Files
+            - Dir['data/*'].each do |path|
+              - file = path.split('/').last
+              %li
+                %a{ href: "?graph=load+#{file}" }= file
+
         #content.span10
           #alert.alert.alert-block.alert-error
             %button{ 'type' => 'button', 'class' => 'close', 'data-dismiss' => 'alert' }
