@@ -94,7 +94,7 @@
               - next if File.directory? path
               - file = path.split('/').last
               %li
-                %a{ href: "?graph=load+#{file}" }= file
+                %a{ href: "?graph=load+#{path.sub /^data\//, ''}" }= file
 
         #content.span10
           #alert.alert.alert-block.alert-error
