@@ -91,6 +91,7 @@
 
             %li.nav-header Files
             - Dir['data/*'].each do |path|
+              - next if File.directory? path
               - file = path.split('/').last
               %li
                 %a{ href: "?graph=load+#{file}" }= file
