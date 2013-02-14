@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'coffee-script'
+require 'json'
 
 require 'steffi'
 
