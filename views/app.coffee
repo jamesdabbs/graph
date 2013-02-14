@@ -60,6 +60,8 @@ $ ->
         $('#alert').show()
       else
         layout result
+    error: (xhr, text, err) ->
+      alert err + ': ' + text
 
 
 
