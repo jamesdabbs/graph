@@ -90,7 +90,7 @@
               %a{ href: "?graph=citations+200+3" } Citations
 
             %li.nav-header Files
-            - Dir['data/**/*'].each do |path|
+            - Dir.glob("data/**{,/*/**}/*").each do |path|
               - next if File.directory? path
               - file = path.split('/').last
               %li
