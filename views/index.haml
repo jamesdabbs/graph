@@ -6,7 +6,7 @@
     %link(rel="stylesheet" type="text/css" href="bootstrap.min.css")
 
     :css
-      form { 
+      form {
         margin: 0
       }
 
@@ -42,59 +42,14 @@
     .container-fluid
       .row-fluid
         #sidebar.span2
-          %h4 Sample Graphs
+          %h4 Graphs
           %ul.nav.nav-list
-            %li.nav-header Famous
-            %li
-              %a{ href: "?graph=famous+dodecahedron" }
-                Dodecahedron
-            %li
-              %a{ href: "?graph=famous+folkman", title: "The semisymmetric graph with minimum number of vertices, 20 and 40 edges. A semisymmetric graph is regular, edge transitive and not vertex transitive."}
-                Folkman
-            %li
-              %a{ href: "?graph=famous+icosahedron" }
-                Icosahedron
-            %li
-              %a{ href: "?graph=famous+meredith", title: "The Meredith graph is a quartic graph on 70 nodes and 140 edges that is a counterexample to the conjecture that every 4-regular 4-connected graph is Hamiltonian." }
-                Meredith
-            %li
-              %a{ href: "?graph=famous+nonline", title: "A graph whose connected components are the 9 graphs whose presence as a vertex-induced subgraph in a graph makes a nonline graph. It has 50 vertices and 72 edges." }
-                Non-line
-            %li
-              %a{ href: "?graph=famous+thomassen", title: "The smallest hypotraceable graph, on 34 vertices and 52 edges. A hypotracable graph does not contain a Hamiltonian path but after removing any single vertex from it the remainder always contains a Hamiltonian path. A graph containing a Hamiltonian path is called tracable." }
-                Thomassen
-            %li
-              %a{ href: "?graph=famous+tutte", title: "Tait's Hamiltonian graph conjecture states that every 3-connected 3-regular planar graph is Hamiltonian. This graph is a counterexample. It has 46 vertices and 69 edges" }
-                Tutte
-            %li
-              %a{ href: "?graph=famous+walther", title: "An identity graph with 25 vertices and 31 edges. An identity graph has a single graph automorphism, the trivial one." }
-                Walther
-            %li
-              %a{ href: "?graph=famous+zachary", title: "Social network of friendships between 34 members of a karate club at a US university in the 1970s. See W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977)." }
-                Zachary
-
-            %li.nav-header Generators
-            %li
-              %a{ href: "?graph=full+6" } Full
-            %li
-              %a{ href: "?graph=ring+30" } Ring
-            %li
-              %a{ href: "?graph=star+15" } Star
-            %li
-              %a{ href: "?graph=tree+150+6" } Tree
-
-            %li.nav-header Games
-            %li
-              %a{ href: "?graph=erdos_renyi+150+150" } Erdős-Renyi
-            %li
-              %a{ href: "?graph=citations+200+3" } Citations
-
             %li.nav-header Files
             - Dir.glob("data/**{,/*/**}/*").each do |path|
               - next if File.directory? path
               - file = path.split('/').last
               %li
-                %a{ href: "?graph=load+#{path.sub /^data\//, ''}" }= file
+                %a{ href: "?graph=#{path.sub /^data\//, ''}" }= file
 
         #content.span10
           #alert.alert.alert-block.alert-error

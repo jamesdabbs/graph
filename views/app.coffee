@@ -2,11 +2,11 @@ layout = (graph) ->
   color = d3.scale.category20()
 
   width = $('#content').width()
-  height = document.height
+  height = document.height || 800
 
   force = d3.layout.force()
-      .charge(-120)
-      .linkDistance(30)
+      .charge(-1200)
+      .linkDistance(100)
       .size([width, height])
       .nodes(graph.nodes)
       .links(graph.links)
@@ -49,7 +49,7 @@ layout = (graph) ->
 #-------
 
 $ ->
-  $.ajax "data.json", 
+  $.ajax "data.json",
     data:
       graph: $('#graph').val()
     dataType: 'json'
